@@ -11,3 +11,21 @@ Running 30s test @ http://127.0.0.1:8080
   Socket errors: connect 0, read 3, write 0, timeout 0
 Requests/sec:  43580.03
 ```
+
+
+## build native
+```bash
+gradle assemble
+native-image --no-server -cp build/libs/perf-0.1-all.jar
+```
+
+failed
+
+```bash
+native-image --no-server -cp build/libs/perf-0.1-all.jar \
+ --initialize-at-run-time=io.micronaut.configuration.lettuce.session.$RedisHttpSessionConfigurationDefinition \
+ 
+```
+```bash
+native-image --no-server -cp build/libs/perf-0.1-all.jar --initialize-at-run-time=io.micronaut.configuration.lettuce.session.$RedisHttpSessionConfigurationDefinition,reactor.core.publisher.Mono,reactor.core.publisher.Flux
+```

@@ -18,7 +18,9 @@ Requests/sec:  43580.03
 gradle assemble
 native-image --no-server -cp build/libs/perf-0.1-all.jar
 ```
+**micronaut 2.0 works!**
 
+~~
 failed
 
 ```bash
@@ -29,3 +31,4 @@ native-image --no-server -cp build/libs/perf-0.1-all.jar \
 ```bash
 native-image --no-server -cp build/libs/perf-0.1-all.jar --initialize-at-run-time=io.micronaut.configuration.lettuce.session.$RedisHttpSessionConfigurationDefinition,reactor.core.publisher.Mono,reactor.core.publisher.Flux
 ```
+~~

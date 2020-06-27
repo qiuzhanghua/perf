@@ -1,4 +1,4 @@
-package perf
+package com.example
 
 import io.lettuce.core.api.async.RedisAsyncCommands
 import io.lettuce.core.api.sync.RedisCommands
@@ -17,7 +17,7 @@ open class DefaultController {
 
     @PostConstruct
     fun init() {
-        syncCommands = connection.sync();
+        syncCommands = connection.sync()
     }
 
     @Get(produces = [MediaType.TEXT_PLAIN])
